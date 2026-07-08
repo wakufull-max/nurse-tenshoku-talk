@@ -95,6 +95,20 @@
   .combo-b .big{display:inline-block;background:#fff;color:var(--pink-deep);font-size:19px;font-weight:900;padding:1px 12px;border-radius:8px;margin:4px 3px;transform:rotate(-2deg);}
   .combo-b p{font-size:12px;margin-top:8px;line-height:1.6;}
 
+  /* ---- job example cards ---- */
+  .jobs{max-width:84%;display:flex;flex-direction:column;gap:9px;}
+  .job{background:#fff;border-radius:14px;border-top-left-radius:4px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1);}
+  .job-head{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid #f2f2f2;}
+  .job-emoji{font-size:18px;flex-shrink:0;}
+  .job-title{font-size:13px;font-weight:900;line-height:1.35;color:#3a3a3a;}
+  .job-tag{margin-left:auto;font-size:9px;font-weight:700;color:#fff;background:var(--green-deep);padding:2px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .job-body{padding:9px 12px 11px;}
+  .job-row{display:flex;font-size:12px;line-height:1.7;}
+  .job-row .k{color:#999;width:52px;flex-shrink:0;}
+  .job-row .v{color:#444;font-weight:700;}
+  .job-row .v .em{color:var(--pink-deep);}
+  .job-note{margin-top:6px;font-size:10.5px;color:#8a7a68;background:var(--pink-soft);border-radius:8px;padding:5px 8px;line-height:1.5;}
+
   .dual{display:flex;flex-direction:column;gap:8px;max-width:82%;margin-top:2px;}
   .dual a{display:block;text-decoration:none;color:#fff;font-weight:900;font-size:14px;padding:14px;border-radius:14px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,.15);}
   .dual .d1{background:linear-gradient(135deg,#3ACC5E,#2FB84E);}
@@ -194,16 +208,20 @@ const script = [
   {type:'me',   time:'21:15', html:'あ！！ レバウェルは内部情報が濃くて、ナース専科は求人数と安定感…🤯 まさに真逆で補い合ってる！！'},
   {type:'aya',  time:'21:16', typing:true, html:'そういうこと🙆‍♀️✨ だから「どっちが良い」じゃなくて<span class="pk">両方使う</span>のが正解なの。片方の弱点をもう片方が消してくれるからね'},
   {type:'combo', time:'21:16'},
-  {type:'me',   time:'21:17', html:'33万件！？すごすぎます😳✨ でも2社も登録するのちょっと大変じゃないですか？💦'},
-  {type:'aya',  time:'21:17', typing:true, html:'それがどっちも1〜2分で終わるよ😌 しかも<span class="pk">登録も相談もぜんぶ無料</span>！合わなければ使わなきゃOKだから、ノーリスクなの👌'},
-  {type:'me',   time:'21:18', html:'無料なら登録しない理由ないですね😳!! やってみます🔥'},
-  {type:'aya',  time:'21:18', typing:true, html:'ぜひ！あとこれ大事なんだけど、<span class="pk">条件の良い求人ほど人気ですぐ埋まっちゃう</span>の😢'},
-  {type:'aya-cont', time:'21:19', html:'私も「あとで登録しよ」って後回しにしてたら、気になってた求人が翌週には募集終了してて泣いたことある🥲 動くなら早いほうがぜったい得だよ'},
-  {type:'me',   time:'21:19', html:'たしかに…！ 迷ってるうちに無くなったら悔しすぎますね😭 今のうちに登録しときます🔥'},
-  {type:'aya',  time:'21:19', typing:true, html:'それがいい👏✨ 下のボタンから両方いけるよ。まずはレバウェルでLINE相談→ナース専科で求人比較、の順がおすすめ🌱'},
-  {type:'cta',  time:'21:19'},
-  {type:'me',   time:'21:22', html:'両方登録しました😭🙏 ずっと動けなかったのに、やっと一歩踏み出せました…！本当にありがとうございます💕'},
-  {type:'aya',  time:'21:22', typing:true, html:'えらい〜！！👏😭 あなたに合う職場、絶対見つかるからね。応援してる🌸 また困ったらいつでも連絡して😌'},
+  {type:'me',   time:'21:16', html:'カバー率すごい…！ でも実際、そんな都合のいいホワイト求人ってあるんですか？🥲'},
+  {type:'aya',  time:'21:17', typing:true, html:'あるある😆 私が2社で実際に見かけたやつ、ちょっと見せるね👇 こういうのが普通に出てくるよ'},
+  {type:'jobs', time:'21:17'},
+  {type:'aya-cont', time:'21:18', html:'ね、意外とあるでしょ？😌 こういう求人が<span class="hl">2社で探すと選び放題</span>になるの。1社だけだと出会えなかったりするんだよね'},
+  {type:'me',   time:'21:18', html:'えっ日勤のみで年収680万とか、オンコールなしで土日祝休みとか夢すぎます😭 こんなの見ちゃったら探さずにいられない…！'},
+  {type:'aya',  time:'21:18', typing:true, html:'でしょ😆 しかも登録も相談も<span class="pk">ぜんぶ無料</span>、どっちも1〜2分で終わるよ。合わなければ使わなきゃOKだからノーリスク👌'},
+  {type:'me',   time:'21:19', html:'無料なら登録しない理由ないですね😳!! やってみます🔥'},
+  {type:'aya',  time:'21:19', typing:true, html:'ぜひ！あとこれ大事なんだけど、<span class="pk">条件の良い求人ほど人気ですぐ埋まっちゃう</span>の😢'},
+  {type:'aya-cont', time:'21:20', html:'私も「あとで登録しよ」って後回しにしてたら、気になってた求人が翌週には募集終了してて泣いたことある🥲 動くなら早いほうがぜったい得だよ'},
+  {type:'me',   time:'21:20', html:'たしかに…！ 迷ってるうちに無くなったら悔しすぎますね😭 今のうちに登録しときます🔥'},
+  {type:'aya',  time:'21:20', typing:true, html:'それがいい👏✨ 下のボタンから両方いけるよ。まずはレバウェルでLINE相談→ナース専科で求人比較、の順がおすすめ🌱'},
+  {type:'cta',  time:'21:20'},
+  {type:'me',   time:'21:23', html:'両方登録しました😭🙏 ずっと動けなかったのに、やっと一歩踏み出せました…！本当にありがとうございます💕'},
+  {type:'aya',  time:'21:23', typing:true, html:'えらい〜！！👏😭 あなたに合う職場、絶対見つかるからね。応援してる🌸 また困ったらいつでも連絡して😌'},
 ];
 
 const chat = document.getElementById('chat');
@@ -271,6 +289,45 @@ function buildMessage(item){
         <div class="svc-stat"><small>求人数</small><b>10万件</b></div>
         <a class="svc-btn" href="https://px.a8.net/svt/ejp?a8mat=4510R9+1DFKTM+9MO+3ZD6GY" target="_blank" rel="nofollow noopener sponsored">まず求人を見てみる ▶</a></div>`;
     row.appendChild(card);
+    return row;
+  }
+
+  if(item.type==='jobs'){
+    row.appendChild(avatar(false));
+    const jobs=document.createElement('div');
+    jobs.className='jobs';
+    jobs.innerHTML=`
+      <div class="job">
+        <div class="job-head"><span class="job-emoji">💰</span><span class="job-title">美容/内科クリニック 外来</span><span class="job-tag">高収入</span></div>
+        <div class="job-body">
+          <div class="job-row"><span class="k">給与</span><span class="v"><span class="em">年収600〜680万</span></span></div>
+          <div class="job-row"><span class="k">勤務</span><span class="v">日勤のみ / 残業ゼロ・定時退社</span></div>
+          <div class="job-row"><span class="k">休日</span><span class="v">年間休日125日 / 完全週休2日</span></div>
+          <div class="job-row"><span class="k">待遇</span><span class="v">賞与年2回 / 各種手当充実</span></div>
+          <div class="job-note">💬 前職から年収+150万の人も。夜勤なし・残業なしでこの水準はかなりの好条件だった✨</div>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-head"><span class="job-emoji">🏡</span><span class="job-title">日勤のみ 訪問看護</span><span class="job-tag">ワークライフ</span></div>
+        <div class="job-body">
+          <div class="job-row"><span class="k">給与</span><span class="v">月給38〜46万（年収500万超も）</span></div>
+          <div class="job-row"><span class="k">勤務</span><span class="v"><span class="em">オンコールなし / 土日祝休み</span></span></div>
+          <div class="job-row"><span class="k">休日</span><span class="v">年間休日128日 / 有給消化率ほぼ100%</span></div>
+          <div class="job-row"><span class="k">その他</span><span class="v">育児と両立◎ 時短・直行直帰OK</span></div>
+          <div class="job-note">💬 3児の母の私が今いちばん気になってるタイプ。ママナースに大人気ですぐ埋まる🥲</div>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-head"><span class="job-emoji">🌸</span><span class="job-title">総合病院 病棟看護師</span><span class="job-tag">人間関係◎</span></div>
+        <div class="job-body">
+          <div class="job-row"><span class="k">給与</span><span class="v"><span class="em">年収540〜600万</span> / 賞与4.5ヶ月</span></div>
+          <div class="job-row"><span class="k">勤務</span><span class="v">2交代 / 残業少なめ・夜勤手当厚め</span></div>
+          <div class="job-row"><span class="k">職場</span><span class="v">離職率5%以下・定着率◎</span></div>
+          <div class="job-row"><span class="k">環境</span><span class="v">プリセプター制 / 教育充実で安心</span></div>
+          <div class="job-note">💬 内部情報で「人間関係が穏やかで雰囲気が良い」と確認できた病棟。ここはレバウェルが強い！</div>
+        </div>
+      </div>`;
+    row.appendChild(jobs);
     return row;
   }
 
